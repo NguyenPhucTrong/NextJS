@@ -1,6 +1,11 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 const facebook = () => {
+  const router = useRouter();
   const handleButton = () => {
-    alert("me");
+    router.push("/");
   };
   return (
     <div>
