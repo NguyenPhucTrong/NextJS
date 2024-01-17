@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -7,7 +8,8 @@ export default function Home() {
       <div className={styles.description}>
         <p>
           {" "}
-          <a href="/facebook">FOUNDATION 50373</a>
+          <Link href="/facebook">FOUNDATION 50373</Link>
+          {/* <a href="/facebook">FOUNDATION 50373</a> */}
         </p>
         <div>
           <a
