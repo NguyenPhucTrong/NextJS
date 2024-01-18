@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
+import x from "@/styles/app.module.css";
 
 export default function Home() {
   return (
@@ -8,7 +9,9 @@ export default function Home() {
       <div className={styles.description}>
         <p>
           {" "}
-          <Link href="/facebook">FOUNDATION 50373</Link>
+          <Link className={x["red"]} href="/facebook">
+            FOUNDATION 50373
+          </Link>
           {/* <a href="/facebook">FOUNDATION 50373</a> */}
         </p>
         <div>
