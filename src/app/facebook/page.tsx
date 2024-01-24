@@ -14,7 +14,6 @@ const Facebook = () => {
     //   </div>
     // </div>
     <div>
-      <div>hi</div>
       <AppTable />
     </div>
   );

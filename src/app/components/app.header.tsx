@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import Nav from "react-bootstrap/Nav";
+import Link from "next/link";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
@@ -16,11 +17,13 @@ const AppHeader = () => {
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
           <button onClick={() => handleButton()}>Back Home</button>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
+              <Link href="/facebook" className="nav-link">
+                Facebook
+              </Link>
               <Nav.Link href="#link">Link</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
