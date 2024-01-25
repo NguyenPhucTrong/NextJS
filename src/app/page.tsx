@@ -4,17 +4,13 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import x from "@/styles/app.module.css";
 import { useEffect } from "react";
+import useSWR from "swr";
 
 export default function Home() {
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(" http://localhost:8000/blogs");
-      const data = await res.json();
-      console.log(data);
-    };
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     // <main className={styles.main}>
