@@ -51,6 +51,7 @@ const AppTable = (props: Iprops) => {
                       <td>{blog.id}</td>
                       <td>{blog.title}</td>
                       <td>{blog.author}</td>
+                      {/* <td>{blog.content}</td> */}
                       <td>
                         <Button>view</Button>
                         <Button variant="warning" className="mx-3">
