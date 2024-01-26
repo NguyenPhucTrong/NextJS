@@ -5,6 +5,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
+import CreateModel from "./create.modal";
+import { useState } from "react";
 
 interface Iprops {
   blogs: IBlogs[];
@@ -13,12 +15,27 @@ interface Iprops {
 const AppTable = (props: Iprops) => {
   const { blogs } = props;
   console.log(blogs);
+
+  const [showModalCreate, setShowModalCreate] = useState<boolean>(false);
   return (
     <div>
       <Container>
         <Row>
           <Col>
-            <Table striped bordered hover>
+            <div
+              className="mb-3"
+              style={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <h3>Table Blogs</h3>
+              <Button
+                variant="secondary"
+                onClick={() => setShowModalCreate(true)}
+              >
+                Add New
+              </Button>
+            </div>
+
+            <Table striped bordered hover size="sm">
               <thead>
                 <tr>
                   <th>No</th>
@@ -46,6 +63,10 @@ const AppTable = (props: Iprops) => {
                 })}
               </tbody>
             </Table>
+            <CreateModel
+              showModalCreate={showModalCreate}
+              setShowModalCreate={setShowModalCreate}
+            />
           </Col>
         </Row>
       </Container>
