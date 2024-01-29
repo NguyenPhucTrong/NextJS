@@ -21,11 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} style={{ height: "100" }}>
         <AppHeader />
         {/* <Container>{children}</Container> */}
         {children}
-        <AppFooter />
+        <div style={{ bottom: "0", position: "absolute", width: "100%" }}>
+          <AppFooter />
+        </div>
         <ToastContainer />
       </body>
     </html>

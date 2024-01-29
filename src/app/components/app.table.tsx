@@ -25,7 +25,7 @@ const AppTable = (props: Iprops) => {
 
   return (
     <div>
-      <Container>
+      <Container style={{ minHeight: "calc(100vh-106px)" }}>
         <Row>
           <Col>
             <div
