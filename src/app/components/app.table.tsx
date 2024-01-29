@@ -7,6 +7,7 @@ import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import CreateModel from "./create.modal";
 import { useState } from "react";
+import UpdateModel from "./update.modal";
 
 interface Iprops {
   blogs: IBlogs[];
@@ -14,9 +15,13 @@ interface Iprops {
 
 const AppTable = (props: Iprops) => {
   const { blogs } = props;
-  console.log(blogs);
+  // console.log(blogs);
+
+  const [blog, setBlog] = useState<IBlogs | null>(null);
 
   const [showModalCreate, setShowModalCreate] = useState<boolean>(false);
+  const [showModalUpdate, setShowModalUpdate] = useState<boolean>(false);
+
   return (
     <div>
       <Container>
@@ -45,16 +50,23 @@ const AppTable = (props: Iprops) => {
                 </tr>
               </thead>
               <tbody>
-                {blogs.map((blog) => {
+                {blogs.map((item) => {
                   return (
-                    <tr key={blog.id}>
-                      <td>{blog.id}</td>
-                      <td>{blog.title}</td>
-                      <td>{blog.author}</td>
+                    <tr key={item.id}>
+                      <td>{item.id}</td>
+                      <td>{item.title}</td>
+                      <td>{item.author}</td>
                       {/* <td>{blog.content}</td> */}
                       <td>
                         <Button>view</Button>
-                        <Button variant="warning" className="mx-3">
+                        <Button
+                          variant="warning"
+                          className="mx-3"
+                          onClick={() => {
+                            setBlog(item);
+                            setShowModalUpdate(true);
+                          }}
+                        >
                           Edit
                         </Button>
                         <Button variant="danger">Delete</Button>
@@ -67,6 +79,12 @@ const AppTable = (props: Iprops) => {
             <CreateModel
               showModalCreate={showModalCreate}
               setShowModalCreate={setShowModalCreate}
+            />
+            <UpdateModel
+              showModalUpdate={showModalUpdate}
+              setShowModalUpdate={setShowModalUpdate}
+              blog={blog}
+              setBlog={setBlog}
             />
           </Col>
         </Row>
