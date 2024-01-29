@@ -28,6 +28,9 @@ const AppTable = (props: Iprops) => {
       <Container style={{ minHeight: "calc(100vh-106px)" }}>
         <Row>
           <Col>
+            <div>
+              <Link href="/">Back</Link>
+            </div>
             <div
               className="mb-3"
               style={{ display: "flex", justifyContent: "space-between" }}
