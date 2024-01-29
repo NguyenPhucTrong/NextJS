@@ -8,6 +8,7 @@ import { Button } from "react-bootstrap";
 import CreateModel from "./create.modal";
 import { useState } from "react";
 import UpdateModel from "./update.modal";
+import Link from "next/link";
 
 interface Iprops {
   blogs: IBlogs[];
@@ -58,7 +59,8 @@ const AppTable = (props: Iprops) => {
                       <td>{item.author}</td>
                       {/* <td>{blog.content}</td> */}
                       <td>
-                        <Button>view</Button>
+                        <Link href={`/facebook/${item.id}`}>View</Link>
+
                         <Button
                           variant="warning"
                           className="mx-3"
