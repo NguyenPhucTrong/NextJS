@@ -1,10 +1,12 @@
-"use client";
-import Image from "next/image";
-import styles from "./page.module.css";
-import Link from "next/link";
-import x from "@/styles/app.module.css";
-import { useEffect } from "react";
-import useSWR from "swr";
+// import Link from "next/link";
+// import x from "@/styles/app.module.css";
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Text1",
+};
 
 export default function Home() {
   //   };
@@ -105,16 +107,21 @@ export default function Home() {
     //   </div>
     // </main>
 
+    // <div>
+    //   <div
+    //     style={{
+    //       margin: "60px",
+    //     }}
+    //   >
+    //     <Link className={x["red"]} href="/facebook">
+    //       <span className={x["green"]}>Facebook</span>
+    //     </Link>
+    //   </div>
+    // </div>
     <div>
-      <div
-        style={{
-          margin: "60px",
-        }}
-      >
-        <Link className={x["red"]} href="/facebook">
-          <span className={x["green"]}>Facebook</span>
-        </Link>
-      </div>
+      <h1 style={{ textAlign: "center", marginTop: "65px", color: "Blue" }}>
+        Your are Wellcome
+      </h1>
     </div>
   );
 }
